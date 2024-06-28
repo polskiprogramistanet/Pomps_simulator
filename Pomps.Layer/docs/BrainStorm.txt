@@ -1,0 +1,9 @@
+﻿Temat: Aplikacja ma symulować dystrybutory paliw, 
+Randomowo autonomicznie wykonywać tankowania w trybie auto/lub ręcznym uwalnianiu
+
+Kolejność działań
+- mamy stałą odpowiedzialną za ilość dystrybutorów.
+- załaduj dystrybutory
+- Zbuduj dystrybutory z wężami i cenami. - ok
+- schemat symulacji, w pętli pobieraj dystrybutory, następnie badaj czy dystrybutor w użyciu.
+	jeśli wolny to podnieś wąż i odpal pompe 

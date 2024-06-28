@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DE283A6C-E626-4354-91AD-4124815B02A5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pomps.Layer</RootNamespace>
+    <AssemblyName>Pomps.Layer</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="stateless">
+      <HintPath>..\PompsSimulator\bin\Debug\stateless.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="src\Application\IDisplayValues.cs" />
+    <Compile Include="src\Application\IDistributorOperation.cs" />
+    <Compile Include="src\Application\IInformationValue.cs" />
+    <Compile Include="src\Application\IPresenterPanel.cs" />
+    <Compile Include="src\Application\ISimulationOperations.cs" />
+    <Compile Include="src\Application\IViewPanel.cs" />
+    <Compile Include="src\Application\PresenterPanel.cs" />
+    <Compile Include="src\Application\SimulatorEngine.cs" />
+    <Compile Include="src\Common\Configuration.cs" />
+    <Compile Include="src\Common\Enumerators.cs" />
+    <Compile Include="src\Common\Monitoring.cs" />
+    <Compile Include="src\Domain\Entities\Distributor\Engine.cs" />
+    <Compile Include="src\Application\IGasStationOperation.cs" />
+    <Compile Include="src\Domain\Entities\Distributor\LedDisplay.cs" />
+    <Compile Include="src\Domain\Entities\Distributor\Memory.cs" />
+    <Compile Include="src\Domain\Entities\Distributor\Nozzle.cs" />
+    <Compile Include="src\Domain\Entities\Distributor\Observers\IObserverDisplayInformation.cs" />
+    <Compile Include="src\Domain\Entities\Distributor\Observers\IObserverEngineInformation.cs" />
+    <Compile Include="src\Domain\Entities\Distributor\Observers\IObserverValidatorCommand.cs" />
+    <Compile Include="src\Domain\Entities\Distributor\Distributor.cs" />
+    <Compile Include="src\Application\GasStation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\Domain\Entities\Distributor\Price.cs" />
+    <Compile Include="src\Domain\Entities\Distributor\Sumator.cs" />
+    <Compile Include="src\Domain\Entities\Distributor\Validator.cs" />
+    <Compile Include="src\Persistence\DataService.cs" />
+    <Compile Include="src\Persistence\IDataService.cs" />
+    <Compile Include="src\Persistence\INozzlesRepositoryOperation.cs" />
+    <Compile Include="src\Persistence\IPompsRepositoryOperation.cs" />
+    <Compile Include="src\Persistence\IPricesRepositoryOperation.cs" />
+    <Compile Include="src\Persistence\NozzlesRepository.cs" />
+    <Compile Include="src\Persistence\PompsRepository.cs" />
+    <Compile Include="src\Persistence\PricesRepository.cs" />
+    <Compile Include="tests\Test_EngineSimulator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\Domain\Entities\Protocols\" />
+    <Folder Include="src\Infrastructure\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="docs\BrainStorm.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
