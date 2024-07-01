@@ -11,14 +11,17 @@ namespace SimPompsEXE
 
     class Program
     {
+        
         static void Main(string[] args)
         {
             Console.Title = "Symulator dystrybutorów. ver.: 1.0.1";
-          
+           
             try
             {
-                HeaderModel header = new HeaderModel();  
+                TestDispenser testDispenser = new TestDispenser();
                 
+
+
 
             }
             catch (Exception ex)
@@ -32,5 +35,8 @@ namespace SimPompsEXE
             }
             
         }
+       
     }
+
+    
 }

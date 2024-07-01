@@ -13,5 +13,9 @@ namespace SimPompsEXE
         { 
             Memory = new MemoryModel();
         }    
+        public void SetPrice(PriceModel price)
+        {
+            //Memory.Prices.
+        }
     }
 }

@@ -8,7 +8,12 @@ namespace SimPompsEXE
 {
     internal class MemoryModel
     {
-        public static int Number { get; set; }
-        public static char Adress { get; set; }
+        public int Number { get; set; }
+        public char Adress { get; set; }
+        public Dictionary<string, PriceModel> Prices { get; set; }
+        public MemoryModel() 
+        {
+            Prices = new Dictionary<string, PriceModel>();
+        }
     }
 }

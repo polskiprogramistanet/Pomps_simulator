@@ -13,5 +13,6 @@ namespace SimPompsEXE
         public string FuelName { get; set; }
         public string FuelSymbol { get; set; }
         public PriceModel Price { get; set; }
+        public decimal Totalizer { get; set; }
     }
 }

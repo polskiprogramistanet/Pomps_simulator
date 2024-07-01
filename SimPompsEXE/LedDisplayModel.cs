@@ -28,10 +28,10 @@ namespace SimPompsEXE
 
         }
     }
-    interface IDisplayValues
+    internal class DisplayValues
     {
-        decimal Amount { get; set; }
-        decimal Volume { get; set; }
-        decimal Price { get; set; }
+        public decimal Amount { get; set; }
+        public decimal Volume { get; set; }
+        public decimal Price { get; set; }
     }
 }
