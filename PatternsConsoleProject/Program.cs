@@ -14,7 +14,7 @@ namespace PatternsConsoleProject
         {
             
             var classRoom = new ClassRoom();
-            var student = new Student(classRoom, "Rafał");
+            var student = new Student(classRoom, "Rafael");
             var teacher = new Teacher(classRoom);
 
             student.MakeTaskDone();

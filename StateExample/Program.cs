@@ -25,7 +25,7 @@ namespace StateExample
             onOffSwitch.Configure(on).Permit(space, off);
 
             Console.WriteLine("Press <space> to toggle the switch. Any other key will exit the program.");
-
+            var diagram =  Stateless.Graph.UmlDotGraph.Format(onOffSwitch.GetInfo());
             while (true)
             {
                 Console.WriteLine("Switch is in state: " + onOffSwitch.State);
