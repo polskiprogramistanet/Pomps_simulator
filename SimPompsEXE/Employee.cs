@@ -53,7 +53,7 @@ namespace SimPompsEXE
             }
             else
             {
-                Console.WriteLine($"Koniec tankowania");
+                Console.WriteLine($"End of transaction");
                 this.time = rnd.Next(1500, 5000);
                 Task tNozzleUp = new Task(nozzleUp);
                 tNozzleUp.Wait(time);
@@ -67,7 +67,7 @@ namespace SimPompsEXE
         }
         private void Dispenser_DispenserValues(object sender, DisplayValues e)
         {
-            Console.WriteLine($"Cena: {e.Price}zł Ilość: {e.Volume}L. Wartość: {e.Amount}zł | limit: {volume}L.");
+            Console.WriteLine($"Price: {e.Price}$ Volume: {e.Volume}L. Amount: {e.Amount}$ | limit: {volume}L.");
             if (e.Volume > volume)
             {
                 this.time = rnd.Next(500, 5000);
@@ -80,11 +80,11 @@ namespace SimPompsEXE
         }
         private void Dispenser_DispenserEnbl(object sender, Enums.DispenserEnblEnum e)
         {
-            Console.WriteLine($"Dystrybutor status: {e.ToString()}");
+            Console.WriteLine($"Dispenser status: {e.ToString()}");
         }
         private void Dispenser_PompEngineEnbl(object sender, Enums.PompEngineEnblEnum e)
         {
-            Console.WriteLine($"Pompa status: {e.ToString()}");
+            Console.WriteLine($"Pomp Engine status: {e.ToString()}");
         }
 
     }
