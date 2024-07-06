@@ -10,5 +10,6 @@ namespace SimPompsEXE
     {
         public decimal Value { get; set; }
         public string ProductCode { get; set; }
+        public int NozzleNum { get; set; }
     }
 }

@@ -9,16 +9,19 @@ namespace SimPompsEXE
     internal class TestDispenser
     {
         DispenserModel model;   
+        Employee employee;
         public TestDispenser()
         {
             model = new DispenserModel();
-            model.DispenserChanged += Model_DispenserChanged;
-            model.PressTriggerInGun();
+             
+            model.SetPrice(new PriceModel() { Value = 4.55m, NozzleNum = 1 }, 1);
+            model.SetPrice(new PriceModel() { Value = 6.55m, NozzleNum = 2 }, 2);
+            model.SetPrice(new PriceModel() { Value = 7.55m, NozzleNum = 3 }, 3);
+            model.SetPrice(new PriceModel() { Value = 2.55m, NozzleNum = 4 }, 4);
+            employee = new Employee(model);
+            employee.Init();
         }
 
-        private void Model_DispenserChanged(object sender, DisplayValues e)
-        {
-            Console.WriteLine(e.Volume);
-        }
+        
     }
 }

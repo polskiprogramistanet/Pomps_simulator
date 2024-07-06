@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Stateless, Version=4.0.0.0, Culture=neutral, PublicKeyToken=93038f0927583c9a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stateless.5.16.0\lib\net462\Stateless.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,8 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DispenserModel.cs" />
+    <Compile Include="Employee.cs" />
     <Compile Include="Enums\Enumerators.cs" />
-    <Compile Include="HeaderModel.cs" />
+    <Compile Include="IDispenser.cs" />
     <Compile Include="LedDisplayModel.cs" />
     <Compile Include="MemoryModel.cs" />
     <Compile Include="NozzleModel.cs" />
@@ -53,11 +57,15 @@
     <Compile Include="PriceModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ILedDisplayService.cs" />
+    <Compile Include="Services\IMemoryService.cs" />
     <Compile Include="Services\IPompEngineService.cs" />
+    <Compile Include="StateValuesComplete.cs" />
     <Compile Include="TestDispenser.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Pomps.Layer\Pomps.Layer.csproj">
@@ -65,8 +73,6 @@
       <Name>Pomps.Layer</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Intrfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

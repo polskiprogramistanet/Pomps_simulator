@@ -12,16 +12,17 @@ namespace SimPompsEXE
     {
         IPompEngineService service;
         bool eng;
-        Thread pomping;
+        Task pomping;
         public decimal Value { get; private set; }
         public PompEngineModel(IPompEngineService service) 
         { 
             this.service = service;
-            this.pomping = new Thread(engine);
+            
         }
         public void PompOn()
         {
             this.eng = true;
+            this.pomping = new Task(engine);
             this.pomping.Start();
         }
         public void PompOff() 
@@ -34,12 +35,20 @@ namespace SimPompsEXE
         }
         void engine()
         {
-            while (eng) 
+            try
             {
-                this.Value += 0.25m;
-                this.service.SetPompEngineValue(Value);
-                Thread.Sleep(500);
+                while (eng)
+                {
+                    this.Value += 0.25m;
+                    this.service.SetPompEngineValue(Value);
+                    this.pomping.Wait(500);
+                }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+           
         }
     }
 }
