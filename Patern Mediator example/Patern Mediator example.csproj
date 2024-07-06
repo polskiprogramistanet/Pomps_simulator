@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6CBD75AB-7C59-4DFA-8D74-B74C3BAF41C3}</ProjectGuid>
+    <ProjectGuid>{B83A6A2B-7AB5-4174-98DC-F78EB92CB81C}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>SimPompsEXE</RootNamespace>
-    <AssemblyName>SimPompsEXE</AssemblyName>
+    <RootNamespace>Patern_Mediator_example</RootNamespace>
+    <AssemblyName>Patern_Mediator_example</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,9 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Stateless, Version=4.0.0.0, Culture=neutral, PublicKeyToken=93038f0927583c9a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Stateless.5.16.0\lib\net462\Stateless.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,33 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DispenserModel.cs" />
-    <Compile Include="Employee.cs" />
-    <Compile Include="Enums\Enumerators.cs" />
-    <Compile Include="IDispenser.cs" />
-    <Compile Include="LedDisplayModel.cs" />
-    <Compile Include="MemoryModel.cs" />
-    <Compile Include="NozzleModel.cs" />
-    <Compile Include="PompEngineModel.cs" />
-    <Compile Include="PriceModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\ILedDisplayService.cs" />
-    <Compile Include="Services\IMemoryService.cs" />
-    <Compile Include="Services\IPompEngineService.cs" />
-    <Compile Include="StateValuesComplete.cs" />
-    <Compile Include="TestDispenser.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Pomps.Layer\Pomps.Layer.csproj">
-      <Project>{de283a6c-e626-4354-91ad-4124815b02a5}</Project>
-      <Name>Pomps.Layer</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
