@@ -61,7 +61,6 @@
     <Compile Include="Services\IMemoryService.cs" />
     <Compile Include="Services\IPompEngineService.cs" />
     <Compile Include="StateValuesComplete.cs" />
-    <Compile Include="TestDispenser.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

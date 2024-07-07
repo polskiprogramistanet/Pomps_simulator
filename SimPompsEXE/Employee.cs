@@ -33,13 +33,25 @@ namespace SimPompsEXE
             tNozzleUp.Wait(time);
             tNozzleUp.Start();
         }
+        public void Block() 
+        { 
+        
+        }
+        public void UnBlock() 
+        { 
+        
+        }
+        public void Release() 
+        { 
+        
+        }
         private void nozzleUp()
         {
+            Console.Clear();
             nozzNum = rnd.Next(1, 4);
-            Console.WriteLine($"time = {time} Nozzle {nozzNum} is Up!");
+            Console.WriteLine($"Nozzle {nozzNum} is Up!");
             dispenser.PickUpNozzle(nozzNum);
         }
-       
         private void Dispenser_NozzleState(object sender, Enums.NozzleStateEnum e)
         {
             if(e == Enums.NozzleStateEnum.Up)
@@ -47,13 +59,13 @@ namespace SimPompsEXE
                 this.volume = rnd.Next(5, 10);
                 Task trigger = new Task(dispenser.PressTriggerInGun);
                 this.time = rnd.Next(1500, 5000);
-                Console.WriteLine($"Trigger time: {time}");
+                Console.WriteLine($"Trigger gun on");
                 trigger.Wait(time);
                 trigger.Start();
             }
             else
             {
-                Console.WriteLine($"Koniec tankowania");
+                Console.WriteLine($"End of transaction.");
                 this.time = rnd.Next(1500, 5000);
                 Task tNozzleUp = new Task(nozzleUp);
                 tNozzleUp.Wait(time);
@@ -67,7 +79,7 @@ namespace SimPompsEXE
         }
         private void Dispenser_DispenserValues(object sender, DisplayValues e)
         {
-            Console.WriteLine($"Cena: {e.Price}zł Ilość: {e.Volume}L. Wartość: {e.Amount}zł | limit: {volume}L.");
+            Console.WriteLine($"Price: {e.Price}$ Volume: {e.Volume}L. Amount: {e.Amount}$ | limit: {volume}L.");
             if (e.Volume > volume)
             {
                 this.time = rnd.Next(500, 5000);
@@ -80,11 +92,11 @@ namespace SimPompsEXE
         }
         private void Dispenser_DispenserEnbl(object sender, Enums.DispenserEnblEnum e)
         {
-            Console.WriteLine($"Dystrybutor status: {e.ToString()}");
+            Console.WriteLine($"Dispenser status: {e.ToString()}");
         }
         private void Dispenser_PompEngineEnbl(object sender, Enums.PompEngineEnblEnum e)
         {
-            Console.WriteLine($"Pompa status: {e.ToString()}");
+            Console.WriteLine($"Pomp Engine status: {e.ToString()}");
         }
 
     }
