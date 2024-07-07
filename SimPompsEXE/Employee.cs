@@ -33,13 +33,25 @@ namespace SimPompsEXE
             tNozzleUp.Wait(time);
             tNozzleUp.Start();
         }
+        public void Block() 
+        { 
+        
+        }
+        public void UnBlock() 
+        { 
+        
+        }
+        public void Release() 
+        { 
+        
+        }
         private void nozzleUp()
         {
+            Console.Clear();
             nozzNum = rnd.Next(1, 4);
-            Console.WriteLine($"time = {time} Nozzle {nozzNum} is Up!");
+            Console.WriteLine($"Nozzle {nozzNum} is Up!");
             dispenser.PickUpNozzle(nozzNum);
         }
-       
         private void Dispenser_NozzleState(object sender, Enums.NozzleStateEnum e)
         {
             if(e == Enums.NozzleStateEnum.Up)
@@ -47,13 +59,13 @@ namespace SimPompsEXE
                 this.volume = rnd.Next(5, 10);
                 Task trigger = new Task(dispenser.PressTriggerInGun);
                 this.time = rnd.Next(1500, 5000);
-                Console.WriteLine($"Trigger time: {time}");
+                Console.WriteLine($"Trigger gun on");
                 trigger.Wait(time);
                 trigger.Start();
             }
             else
             {
-                Console.WriteLine($"End of transaction");
+                Console.WriteLine($"End of transaction.");
                 this.time = rnd.Next(1500, 5000);
                 Task tNozzleUp = new Task(nozzleUp);
                 tNozzleUp.Wait(time);
