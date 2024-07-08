@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
-using Pomps.Layer.src.Domain.Entities.Distributor;
+using Pomps.Layer.src.Domain.Models.Dispenser;
 
 namespace Pomps.Layer.src.Persistence
 {
     interface INozzlesRepositoryOperation
     {
         void Execute();
-        List<Nozzle> GetNozzles(int idPomp);
+        List<NozzleModel> GetNozzles(int idPomp);
     }
 }

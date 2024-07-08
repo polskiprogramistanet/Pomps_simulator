@@ -49,7 +49,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="src\Application\IDisplayValues.cs" />
     <Compile Include="src\Application\IDistributorOperation.cs" />
     <Compile Include="src\Application\IInformationValue.cs" />
     <Compile Include="src\Application\IPresenterPanel.cs" />
@@ -60,20 +59,22 @@
     <Compile Include="src\Common\Configuration.cs" />
     <Compile Include="src\Common\Enumerators.cs" />
     <Compile Include="src\Common\Monitoring.cs" />
-    <Compile Include="src\Domain\Entities\Distributor\Engine.cs" />
+    <Compile Include="src\Domain\Models\Dispenser\DispenserModel.cs" />
+    <Compile Include="src\Domain\Models\Dispenser\DisplayValues.cs" />
+    <Compile Include="src\Domain\Models\Dispenser\IDispenser.cs" />
+    <Compile Include="src\Domain\Models\Dispenser\PompEngineModel.cs" />
     <Compile Include="src\Application\IGasStationOperation.cs" />
-    <Compile Include="src\Domain\Entities\Distributor\LedDisplay.cs" />
-    <Compile Include="src\Domain\Entities\Distributor\Memory.cs" />
-    <Compile Include="src\Domain\Entities\Distributor\Nozzle.cs" />
-    <Compile Include="src\Domain\Entities\Distributor\Observers\IObserverDisplayInformation.cs" />
-    <Compile Include="src\Domain\Entities\Distributor\Observers\IObserverEngineInformation.cs" />
-    <Compile Include="src\Domain\Entities\Distributor\Observers\IObserverValidatorCommand.cs" />
-    <Compile Include="src\Domain\Entities\Distributor\Distributor.cs" />
+    <Compile Include="src\Domain\Models\Dispenser\LedDisplayModel.cs" />
+    <Compile Include="src\Domain\Models\Dispenser\MemoryModel.cs" />
+    <Compile Include="src\Domain\Models\Dispenser\NozzleModel.cs" />
     <Compile Include="src\Application\GasStation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="src\Domain\Entities\Distributor\Price.cs" />
-    <Compile Include="src\Domain\Entities\Distributor\Sumator.cs" />
-    <Compile Include="src\Domain\Entities\Distributor\Validator.cs" />
+    <Compile Include="src\Domain\Models\Dispenser\PriceModel.cs" />
+    <Compile Include="src\Domain\Models\Dispenser\StateValuesComplete.cs" />
+    <Compile Include="src\Domain\Models\Dispenser\SumatorModel.cs" />
+    <Compile Include="src\Domain\Models\Services\ILedDisplayService.cs" />
+    <Compile Include="src\Domain\Models\Services\IMemoryService.cs" />
+    <Compile Include="src\Domain\Models\Services\IPompEngineService.cs" />
     <Compile Include="src\Persistence\DataService.cs" />
     <Compile Include="src\Persistence\IDataService.cs" />
     <Compile Include="src\Persistence\INozzlesRepositoryOperation.cs" />
@@ -85,7 +86,6 @@
     <Compile Include="tests\Test_EngineSimulator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="src\Domain\Entities\Protocols\" />
     <Folder Include="src\Infrastructure\" />
   </ItemGroup>
   <ItemGroup>

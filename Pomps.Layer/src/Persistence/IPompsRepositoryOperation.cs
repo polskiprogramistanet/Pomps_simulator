@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Pomps.Layer.src.Domain.Entities.Distributor;
+using Pomps.Layer.src.Domain.Models.Dispenser;
 
 namespace Pomps.Layer.src.Persistence
 {
@@ -8,7 +8,7 @@ namespace Pomps.Layer.src.Persistence
     {
         int Count { get; }
         void Execute();
-        IList<Distributor> GetItems();
-        Distributor GetItem(int num);
+        IList<DispenserModel> GetItems();
+        DispenserModel GetItem(int num);
     }
 }

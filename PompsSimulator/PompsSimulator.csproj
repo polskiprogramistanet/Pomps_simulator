@@ -107,9 +107,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Pomps.Layer\Pomps.Layer.csproj">
+    <ProjectReference Include="..\Pomps.Layer\Pomps_BackEnd.csproj">
       <Project>{de283a6c-e626-4354-91ad-4124815b02a5}</Project>
-      <Name>Pomps.Layer</Name>
+      <Name>Pomps_BackEnd</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

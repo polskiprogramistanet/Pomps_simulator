@@ -7,7 +7,7 @@ using Pomps.Layer.src.Persistence;
 
 namespace Pomps.Layer.src.Application
 {
-    public class PresenterPanel : IPresenterPanel
+    internal class PresenterPanel : IPresenterPanel
     {
         IViewPanel view = null;
         ISimulationOperations operations = null;

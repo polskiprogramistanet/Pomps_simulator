@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
-using Pomps.Layer.src.Domain.Entities.Distributor;
+using Pomps.Layer.src.Domain.Models.Dispenser;
 using Pomps.Layer.src.Persistence;
 using Pomps.Layer.src.Common;
 
@@ -28,7 +28,6 @@ namespace Pomps.Layer.src.Application
             Monitoring.ShowSetDistributors(pomps.GetItems());
         }
         public int GetCountDistributors => pomps.Count;
-
         public void StartSimulation()
         {
             try

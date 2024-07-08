@@ -1,8 +1,10 @@
-﻿namespace Pomps.Layer.src.Persistence
+﻿using Pomps.Layer.src.Domain.Models.Dispenser;
+
+namespace Pomps.Layer.src.Persistence
 {
     interface IPricesRepositoryOperation
     {
         void Execute();
-        decimal GetPRice(int FuelId);
+        PriceModel GetPRice(int FuelId);
     }
 }

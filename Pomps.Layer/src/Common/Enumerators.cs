@@ -6,6 +6,30 @@ using System.Threading.Tasks;
 
 namespace Pomps.Layer.src.Common
 {
-    public enum ProtocolEnum { EHL, Petromis, ESK, Logitron }
-    public enum DistributorEnbEnum { OFF, ON}
+    internal enum DispenserEnblEnum
+    {
+        OFF = 0,
+        ON = 1
+    }
+    internal enum OperationModeEnum
+    {
+        Manual = 0,
+        Auto = 1
+    }
+    internal enum NozzleStateEnum
+    {
+        Down,
+        Up
+    }
+    internal enum PompEngineEnblEnum
+    {
+        OFF,
+        ON
+    }
+    internal enum ProtocolEnum
+    {
+        EHL,
+        Logitron,
+        Petromis
+    }
 }

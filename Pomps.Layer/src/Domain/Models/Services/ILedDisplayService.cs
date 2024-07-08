@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pomps.Layer.src.Domain.Entities.Distributor
+namespace Pomps.Layer.src.Domain.Models.Services
 {
-    class Sumator
+    internal interface ILedDisplayService
     {
-        public decimal TotalValue { get; set; }
+        void DisplayReset();
     }
 }

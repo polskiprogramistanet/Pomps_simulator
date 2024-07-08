@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pomps.Layer.src.Application
+namespace Pomps.Layer.src.Domain.Models.Dispenser
 {
-    interface IDistributorOperation
+    internal class SumatorModel
     {
-        
+        public decimal TotalValue { get; set; }
     }
 }
