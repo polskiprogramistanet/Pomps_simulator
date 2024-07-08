@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
-using Pomps.Layer.src.Domain.Entities.Distributor;
+using Pomps.Layer.src.Domain.Models.Dispenser;
 
 namespace Pomps.Layer.src.Persistence
 {
     class NozzlesRepository : IDataBase, INozzlesRepositoryOperation
     {
         string query;
-        List<Nozzle> nozzles;
-        IPricesRepositoryOperation prices = null;
+        List<NozzleModel> nozzles;
+        readonly IPricesRepositoryOperation prices = null;
         public NozzlesRepository(IPricesRepositoryOperation prices)
         {
             this.prices = prices;
@@ -26,13 +26,13 @@ namespace Pomps.Layer.src.Persistence
         {
             try
             {
-                nozzles = new List<Nozzle>();
+                nozzles = new List<NozzleModel>();
                 while (rd.Read())
                 {
-                    Nozzle nozzle = new Nozzle();
-                    nozzle.Num = (int)rd[6];
+                    NozzleModel nozzle = new NozzleModel();
+                    nozzle.Number = (int)rd[6];
                     nozzle.ProductCode = (int)rd[8];
-                    nozzle.IdPomp = (int)rd[1];
+                    nozzle.PompId = (int)rd[1];
                     nozzle.FuelId = (int)rd[3];
                     nozzle.FuelName = rd[4].ToString();
                     nozzle.FuelSymbol = rd[5].ToString();
@@ -51,9 +51,9 @@ namespace Pomps.Layer.src.Persistence
             }
             return null;
         }
-        public List<Nozzle> GetNozzles(int idPomp)
+        public List<NozzleModel> GetNozzles(int pompId)
         {
-            return nozzles.FindAll(x => x.IdPomp == idPomp);
+            return nozzles.FindAll(x => x.PompId == pompId);
         }
                 
     }

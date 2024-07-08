@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pomps.Layer.src.Application
+namespace Pomps.Layer.src.Domain.Models.Services
 {
-    interface IDistributorOperation
+    internal interface IMemoryService
     {
-        
     }
 }

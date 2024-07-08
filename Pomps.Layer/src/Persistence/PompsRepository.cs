@@ -4,16 +4,16 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Pomps.Layer.src.Domain.Entities.Distributor;
+using Pomps.Layer.src.Domain.Models.Dispenser;
 
 namespace Pomps.Layer.src.Persistence
 {
     class PompsRepository : IDataBase, IPompsRepositoryOperation
     {
         readonly string query;
-        List<Distributor> distributors = null;
+        List<DispenserModel> dispensers = null;
         readonly INozzlesRepositoryOperation nozzles = null;
-        public int Count => distributors.Count;
+        public int Count => dispensers.Count;
         public PompsRepository(INozzlesRepositoryOperation nozzles)
         {
             this.nozzles = nozzles;
@@ -28,35 +28,31 @@ namespace Pomps.Layer.src.Persistence
         {
             try
             {
-                distributors = new List<Distributor>();
+                dispensers = new List<DispenserModel>();
 
                 while (rd.Read())
                 {
-                    Distributor distributor = new Distributor();
-                    if((int)rd[4]==1)
-                        distributor.Auto = true;
-                    distributor.Nozzles = this.nozzles.GetNozzles((int)rd[0]);
-                    distributor.DistributorNumber = (int)rd[2];
-                    distributors.Add(distributor);
+                    DispenserModel dispenser = new DispenserModel();
+                    
+                    dispenser.SetNozzles(this.nozzles.GetNozzles((int)rd[0]));
+                    dispenser.SetNumbersConfig((char)rd[1], (int)rd[2], (int)rd[4]);
+                    dispensers.Add(dispenser);
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine("PompsRepository.DbReader: {0}", ex.Message);
             }
-            finally
-            {
-                Console.WriteLine("Załadowano {0} zestawów dystrybutorów...", distributors.Count);
-            }
+            
             return null;
         }
-        public IList<Distributor> GetItems()
+        public IList<DispenserModel> GetItems()
         {
-            return distributors;
+            return dispensers;
         }
-        public Distributor GetItem(int num)
+        public DispenserModel GetItem(int num)
         {
-            return distributors.Find(i => i.DistributorNumber == num);
+            return dispensers.Find(i => i.Number == num);
         }
     }
 }

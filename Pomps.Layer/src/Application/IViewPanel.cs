@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Pomps.Layer.src.Domain.Entities.Distributor;
+using Pomps.Layer.src.Domain.Models.Dispenser;
 
 namespace Pomps.Layer.src.Application
 {
-    public interface IViewPanel
+    internal interface IViewPanel
     {
-        void ShowPomps(IList<Distributor> items);
+        void ShowPomps(IList<DispenserModel> items);
 
     }
 }

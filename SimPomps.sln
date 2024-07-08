@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pomps.Layer", "Pomps.Layer\Pomps.Layer.csproj", "{DE283A6C-E626-4354-91AD-4124815B02A5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pomps_BackEnd", "Pomps.Layer\Pomps_BackEnd.csproj", "{DE283A6C-E626-4354-91AD-4124815B02A5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimPompsEXE", "SimPompsEXE\SimPompsEXE.csproj", "{6CBD75AB-7C59-4DFA-8D74-B74C3BAF41C3}"
 EndProject
